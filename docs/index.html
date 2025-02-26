@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Simultaneous Large-scale 3D Exploration Inspection and Interaction via Heterogeneous Fleets under Limited Communication">
+  <meta name="keywords" content="SLEI3D">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DYNAMO-LLM</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">DYNAMO-LLM: Dynamic Long-Term Task Planning for Heterogeneous Multi-Robot Systems in Unknown Environments via Large Language Models</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://tcxm.github.io">Yuxiao Zhu</a><sup>2,*</sup>,</span>
+            <span class="author-block">
+              <a href="https://junfengchen-robotics.github.io">Jufeng Chen</a><sup>1,*</sup>,</span>
+            <span class="author-block">
+              <a href="https://zxt1234567.github.io">Xintong Zhang</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="http://sofienbouaziz.com">Meng Guo</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="http://sofienbouaziz.com">Zhongkui Li</a><sup>1</sup>,
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Peking University,</span>
+            <span class="author-block"><sup>2</sup>Duke Kunshan University</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/TCXM/DYNAMO-LLM"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-centered is-four-fifths">
+        <figure>
+          <img src="./static/images/the-first-figure.jpg"
+               alt="Nerfies: Deformable Neural Radiance Fields"
+               class="publication-image"/>
+        </figure>
+      </div>
+    </div>
+    <div class="hero-body">
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">DYNAMO-LLM</span> introduces a dynamic task planning framework for heterogeneous multi-robot systems in unknown environments, integrating mission comprehension, online subtask generation via LLMs, optimal subtask scheduling, and multi-rate adaptation to enable real-time coordination and adaptability.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p> 
+            Multiple-robot systems such as unmanned ground and aerial vehicles have shown great potential to assist first responders within hazardous environments, such as search and rescue after disaster. However, the online coordination of heterogeneous multi-robot systems in open and unknown environments remains a challenging topic, especially when semantic features are detected online by which new tasks are triggered. Existing approaches typically rely on manual intervention or predefined rules, which lack generality across different scenes. Recent work adopts large language models (LLMs) for scene reasoning and planing, which however often focuses on one-shot and end-to-end generation of all local plans in closed and known environments, overlooking the need for online adaptation. To address these issues, a novel and fully-automated task planning framework (DYNAMO-LLM) is proposed and tailored for open and unknown environments, which integrates three core modules: (i) a high-level mission comprehension module that resolves partial ordering of tasks specified by natural languages or linear temporal logic formulas (LTL); (ii) an online subtask generator that dynamically decomposes tasks into feasible subtasks via LLMs, while inferring their temporal-logical constraints; and (iii) an optimal subtask scheduler that assigns subtasks to robots based on their heterogeneous capabilities, spatial states and available resources. To cope with new features and tasks detected online, a multi-rate and event-based adaptation scheme is introduced to update the set of subtasks as proposed by LLMs, and their assignment via the subtask scheduler. The framework inherits both the LLM's ability of chained logic reasoning in open worlds, and the optimality and explainability of model-based task assignment algorithms. Extensive evaluations are conducted in diverse, open and unknown environments against numerous baselines, further showcasing its versatility and adaptability.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h1 class="title is-3">Overview Framework</h1>
+        <img src="./static/images/framework.jpg" alt="Overview Framework" class="publication-image"/>
+        <div class="content has-text-justified">
+          <p>Overview of the proposed framework, which includes four core modules: the abstraction of partially-ordered tasks from natural languages or LTL formulas (left); the generation of plausible strategies to decompose each task into executable subtasks via LLMs (middle); the subtask assignment and scheduling via model-based optimization (right); and the human-in-the-loop online adaptation and verification (bottom).</p>
+        <!-- <h2 class="title is-3">GCS to Sub-Group Layer</h2>
+        <img src="./static/images/GCS-EXP.jpg" alt="GCS-Sub-Group Layer" class="publication-image">
+        <h2 class="title is-3">Sub-Group Layer</h2>
+        <div class="columns is-centered">
+          <div class="column">
+            <img src="./static/images/SOEI-0.jpg" alt="Sub-Group Layer" class="publication-image">
+          </div>
+          <div class="column">
+            <img src="./static/images/SOEI-1.jpg" alt="Sub-Group Layer" class="publication-image">
+          </div>
+        </div>
+        <div class="columns is-centered">
+          <div class="column">
+            <img src="./static/images/SOEI-2.jpg" alt="Sub-Group Layer" class="publication-image">
+          </div>
+          <div class="column">
+            <img src="./static/images/SOEI-3.jpg" alt="Sub-Group Layer" class="publication-image">
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+
+    <div class="container is-max-desktop">
+
+    <!-- Simulation. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Simulation</h2>
+      </div>
+    </div>
+    <!--/ Simulation. -->
+
+    <div class="columns is-centered">
+      <!-- Visual Effects. -->
+      <div class="column">
+        <div class="content is-centered has-text-centered">
+          <h2 class="title is-4">Layer1: GCS to Sub-Group</h2>
+          <video id="GCS-EXP" autoplay controls muted loop playsinline height="100%" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;">
+            <source src="./static/videos/GCS-EXP.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <!--/ Visual Effects. -->
+
+      <!-- Matting. -->
+      <div class="column is-centered has-text-centered">
+        <h2 class="title is-4">Layer2: Sub-Gorup</h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            <video id="EXP-INS" autoplay controls muted loop playsinline height="100%" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;">
+              <source src="./static/videos/Exp Ins.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!--/ Matting. -->
+
+    <!-- Experiment. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Experiment</h2>
+      </div>
+    </div>
+    <!--/ Experiment. -->
+
+    <div class="columns is-centered">
+
+      <!-- Visual Effects. -->
+      <div class="column">
+        <div class="content is-centered has-text-centered">
+          <h2 class="title is-4">Scenario1: Modern Structure</h2>
+          <video id="Modern" autoplay controls muted loop playsinline height="100%" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;">
+            <source src="./static/videos/Moderns.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <!--/ Visual Effects. -->
+
+      <!-- Matting. -->
+      <div class="column is-centered has-text-centered">
+        <h2 class="title is-4">Scenario2: Ancient Structrure</h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            <video id="Ancients" autoplay controls muted loop playsinline height="100%" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;">
+              <source src="./static/videos/Ancients 21s.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!--/ Matting. -->
+
+    <!-- Experiment. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Comparison</h2>
+      </div>
+    </div>
+    <!--/ Experiment. -->
+
+    <div class="columns is-centered">
+
+      <!-- Visual Effects. -->
+      <div class="column">
+        <div class="content is-centered has-text-centered">
+          <h2 class="title is-4">Comparison1: Modern Structures</h2>
+          <video id="Modern" autoplay controls muted loop playsinline height="100%" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;">
+            <source src="./static/videos/Moderns Comparation.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <!--/ Visual Effects. -->
+
+      <!-- Matting. -->
+      <div class="column is-centered has-text-centered">
+        <h2 class="title is-4">Comparison2: Ancient Structures</h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            <video id="Ancients" autoplay controls muted loop playsinline height="100%" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;">
+              <source src="./static/videos/Comparison Ancients.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!--/ Matting. -->
+
+    <!-- Experiment. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Extensive Experiment</h2>
+      </div>
+    </div>
+    <!--/ Experiment. -->
+
+    <div class="columns is-centered">
+
+      <!-- Visual Effects. -->
+      <div class="column">
+        <div class="content is-centered has-text-centered">
+          <h2 class="title is-4">Explorer Failure</h2>
+          <video id="Modern" autoplay controls muted loop playsinline height="100%" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;">
+            <source src="./static/videos/Exp Fail.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <!--/ Visual Effects. -->
+
+      <!-- Matting. -->
+      <div class="column is-centered has-text-centered">
+        <h2 class="title is-4">Inspector Failure</h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            <video id="Ancients" autoplay controls muted loop playsinline height="100%" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;">
+              <source src="./static/videos/Ins Fail.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!--/ Matting. -->
+
+    <div class="columns is-centered">
+
+    <!-- Visual Effects. -->
+    <div class="column">
+      <div class="content is-centered has-text-centered">
+        <h2 class="title is-4">High Priority Feature</h2>
+        <video id="Modern" autoplay controls muted loop playsinline height="100%" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;">
+          <source src="./static/videos/High Priority.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+    </div>
+    <!--/ Visual Effects. -->
+
+    <!-- Matting. -->
+    <div class="column is-centered has-text-centered">
+      <h2 class="title is-4">Multiple GCS</h2>
+      <div class="columns is-centered">
+        <div class="column content">
+          <video id="Ancients" autoplay controls muted loop playsinline height="100%" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;">
+            <source src="./static/videos/Multi-GCS.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!--/ Matting. -->
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
