@@ -27,7 +27,7 @@ DYNAMO-LLM *(Dynamic Long-Term Task Planning for Heterogeneous Multi-Robot Syste
 
 ## Installation
 
-Code coming soon! 
+Code coming soon!
 
 ## Contact
 
