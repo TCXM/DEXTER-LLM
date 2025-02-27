@@ -6,7 +6,7 @@
         content="Simultaneous Large-scale 3D Exploration Inspection and Interaction via Heterogeneous Fleets under Limited Communication">
   <meta name="keywords" content="SLEI3D">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DYNAMO-LLM</title>
+  <title>DEXTER-LLM</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -47,7 +47,8 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">DYNAMO-LLM: Dynamic Long-Term Task Planning for Heterogeneous Multi-Robot Systems in Unknown Environments via Large Language Models</h1>
+          <h1 class="title is-1 publication-title">DEXTER-LLM</h1>
+          <h2 class="subtitle">Dynamic Long-Term Task Planning for Heterogeneous Multi-Robot Systems in Unknown Environments via Large Language Models</h2>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://tcxm.github.io">Yuxiao Zhu</a><sup>2,*</sup>,</span>
@@ -102,7 +103,7 @@
               </span>
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/TCXM/DYNAMO-LLM"
+                <a href="https://github.com/TCXM/DEXTER-LLM"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -132,7 +133,7 @@
     </div>
     <div class="hero-body">
       <h2 class="subtitle has-text-centered">
-        <span class="dnerf">DYNAMO-LLM</span> introduces a dynamic task planning framework for heterogeneous multi-robot systems in unknown environments, integrating mission comprehension, online subtask generation via LLMs, optimal subtask scheduling, and multi-rate adaptation to enable real-time coordination and adaptability.
+        <span class="dnerf">DEXTER-LLM</span> introduces a dynamic task planning framework for heterogeneous multi-robot systems in unknown environments, integrating mission comprehension, online subtask generation via LLMs, optimal subtask scheduling, and multi-rate adaptation to enable real-time coordination and adaptability.
       </h2>
     </div>
   </div>
@@ -146,7 +147,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p> 
-            Multiple-robot systems such as unmanned ground and aerial vehicles have shown great potential to assist first responders within hazardous environments, such as search and rescue after disaster. However, the online coordination of heterogeneous multi-robot systems in open and unknown environments remains a challenging topic, especially when semantic features are detected online by which new tasks are triggered. Existing approaches typically rely on manual intervention or predefined rules, which lack generality across different scenes. Recent work adopts large language models (LLMs) for scene reasoning and planing, which however often focuses on one-shot and end-to-end generation of all local plans in closed and known environments, overlooking the need for online adaptation. To address these issues, a novel and fully-automated task planning framework (DYNAMO-LLM) is proposed and tailored for open and unknown environments, which integrates three core modules: (i) a high-level mission comprehension module that resolves partial ordering of tasks specified by natural languages or linear temporal logic formulas (LTL); (ii) an online subtask generator that dynamically decomposes tasks into feasible subtasks via LLMs, while inferring their temporal-logical constraints; and (iii) an optimal subtask scheduler that assigns subtasks to robots based on their heterogeneous capabilities, spatial states and available resources. To cope with new features and tasks detected online, a multi-rate and event-based adaptation scheme is introduced to update the set of subtasks as proposed by LLMs, and their assignment via the subtask scheduler. The framework inherits both the LLM's ability of chained logic reasoning in open worlds, and the optimality and explainability of model-based task assignment algorithms. Extensive evaluations are conducted in diverse, open and unknown environments against numerous baselines, further showcasing its versatility and adaptability.
+            Multiple-robot systems such as unmanned ground and aerial vehicles have shown great potential to assist first responders within hazardous environments, such as search and rescue after disaster. However, the online coordination of heterogeneous multi-robot systems in open and unknown environments remains a challenging topic, especially when semantic features are detected online by which new tasks are triggered. Existing approaches typically rely on manual intervention or predefined rules, which lack generality across different scenes. Recent work adopts large language models (LLMs) for scene reasoning and planing, which however often focuses on one-shot and end-to-end generation of all local plans in closed and known environments, overlooking the need for online adaptation. To address these issues, a novel and fully-automated task planning framework (DEXTER-LLM) is proposed and tailored for open and unknown environments, which integrates three core modules: (i) a high-level mission comprehension module that resolves partial ordering of tasks specified by natural languages or linear temporal logic formulas (LTL); (ii) an online subtask generator that dynamically decomposes tasks into feasible subtasks via LLMs, while inferring their temporal-logical constraints; and (iii) an optimal subtask scheduler that assigns subtasks to robots based on their heterogeneous capabilities, spatial states and available resources. To cope with new features and tasks detected online, a multi-rate and event-based adaptation scheme is introduced to update the set of subtasks as proposed by LLMs, and their assignment via the subtask scheduler. The framework inherits both the LLM's ability of chained logic reasoning in open worlds, and the optimality and explainability of model-based task assignment algorithms. Extensive evaluations are conducted in diverse, open and unknown environments against numerous baselines, further showcasing its versatility and adaptability.
           </p>
         </div>
       </div>
