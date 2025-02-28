@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Simultaneous Large-scale 3D Exploration Inspection and Interaction via Heterogeneous Fleets under Limited Communication">
-  <meta name="keywords" content="SLEI3D">
+        content="Dynamic and Explainable Coordination of Multi-Robot Systems in Unknown Environments via Large Language Models">
+  <meta name="keywords" content="DEXTER-LLM">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>DEXTER-LLM</title>
 
@@ -48,7 +48,7 @@
       <div class="columns is-centered">
         <div class="column has-text-centered">
           <h1 class="title is-1 publication-title">DEXTER-LLM</h1>
-          <h2 class="subtitle">Dynamic Long-Term Task Planning for Heterogeneous Multi-Robot Systems in Unknown Environments via Large Language Models</h2>
+          <h2 class="subtitle">Dynamic and Explainable Coordination of Multi-Robot Systems in Unknown Environments via Large Language Models</h2>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://tcxm.github.io">Yuxiao Zhu</a><sup>2,*</sup>,</span>
@@ -93,7 +93,7 @@
               </span> -->
               <!-- Video Link. -->
               <span class="link-block">
-                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                <a href="https://www.youtube.com/watch?v=w2A-NG5LeAY"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-youtube"></i>
@@ -146,8 +146,7 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-            <p>Online coordination of multi-robot systems in open and unknown environments faces significant challenges, particularly when semantic features detected during operation dynamically trigger new tasks. Recent LLM-based approaches for scene reasoning and planning primarily focus on one-shot, end-to-end solutions in known environments, lacking both dynamic adaptation capabilities for online operation and explainability in the processes of planning. To address these issues, a novel framework (DEXTER-LLM) for dynamic task planning in unknown environments, integrates four modules: (i) a mission comprehension module that resolves partial ordering of tasks specified by natural languages or linear temporal logic formulas (LTL), ensuring explainability through formal logic; (ii) an online subtask generator that enhances the accuracy and explainability of task decomposition via multi-stage reasoning and human feedback; (iii) an optimal subtask assigner that allocates subtasks using explicit optimization criteria; and (iv) a dynamic adaptation and verification module that implements multi-rate, event-based updates for both subtask sets and their assignments, to cope with new features and tasks detected online. The framework effectively combines LLMs’ open-world reasoning capabilities with model-based methods, simultaneously addressing the critical challenges of real-time adaptation and plan explainability. Experimental evaluations demonstrate exceptional performance, achieving 100% success rates across all scenarios, completing 160.14 tasks on average (vs. baseline’s 62.4) within 10,000s, and attaining superior SPL scores (0.82 vs. 0.30–0.57) in compound tasks.
-          </p>
+            <p>Online coordination of multi-robot systems in open and unknown environments faces significant challenges, particularly when semantic features detected during operation dynamically trigger new tasks. Recent large language model (LLMs)-based approaches for scene reasoning and planning primarily focus on one-shot, end-to-end solutions in known environments, lacking both dynamic adaptation capabilities for online operation and explainability in the processes of planning. To address these issues, a novel framework (DEXTER-LLM) for dynamic task planning in unknown environments, integrates four modules: (i) a mission comprehension module that resolves partial ordering of tasks specified by natural languages or linear temporal logic formulas (LTL); (ii) an online subtask generator based on LLMs that improves the accuracy and explainability of task decomposition via multi-stage reasoning; (iii) an optimal subtask assigner and scheduler that allocates subtasks to robots via search-based optimization; and (iv) a dynamic adaptation and human-in-the-loop verification module that implements multi-rate, event-based updates for both subtasks and their assignments, to cope with new features and tasks detected online. The framework effectively combines LLMs’ open-world reasoning capabilities with the optimality of model-based assignment methods, simultaneously addressing the critical issue of online adaptability and explainability. Experimental evaluations demonstrate exceptional performances, with 100% success rates across all scenarios, 160 tasks and 480 subtasks completed on average (3 times the baselines), 62% less queries to LLMs during adaptation, and superior plan quality (2 times higher) for compound tasks.</p>
         </div>
       </div>
     </div>
@@ -206,7 +205,7 @@
           <h2 class="title is-4">Scenario-I: Chemical Plant
           </h2>
           <video id="Modern" autoplay controls muted loop playsinline height="100%" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;">
-            <source src="./static/videos/Moderns.mp4"
+            <source src="./static/videos/DEXTER-LLM-Scenario-1-Compressed.mp4"
                     type="video/mp4">
           </video>
         </div>
@@ -219,7 +218,7 @@
         <div class="columns is-centered">
           <div class="column content">
             <video id="Ancients" autoplay controls muted loop playsinline height="100%" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;">
-              <source src="./static/videos/Ancients 21s.mp4"
+              <source src="./static/videos/DEXTER-LLM-Scenario-2-Compressed.mp4"
                       type="video/mp4">
             </video>
           </div>
