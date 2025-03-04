@@ -4,7 +4,7 @@
 
 ![image](docs/static/images/the-first-figure.jpg)
 
-DEXTER-LLM *(Dynamic Long-Term Task Planning for Heterogeneous Multi-Robot Systems in Unknown Environments via Large Language Models)* is a novel framework for dynamic long-term task planning in heterogeneous multi-robot systems, designed to operate in unknown environments. By integrating Large Language Models (LLMs) for real-time reasoning and model-based optimization for task scheduling, DEXTER-LLM achieves adaptive task decomposition, optimal assignment, and robust execution.
+DEXTER-LLM *(Dynamic and Explainable Coordination of Multi-Robot Systems in Unknown Environments via Large Language Models)* is a novel framework for dynamic long-term task planning in heterogeneous multi-robot systems, designed to operate in unknown environments. By integrating Large Language Models (LLMs) for real-time reasoning and model-based optimization for task scheduling, DEXTER-LLM achieves adaptive task decomposition, optimal assignment, and robust execution.
 
 👉 [Project Homepage](https://tcxm.github.io/DEXTER-LLM/)
 
