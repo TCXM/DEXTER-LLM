@@ -25,9 +25,9 @@ DEXTER-LLM *(Dynamic and Explainable Coordination of Multi-Robot Systems in Unkn
 - 🌐 **Scalability & Versatility**  
   Supports large-scale deployments with multiple robots and complex missions.
 
-## Installation
+## Code
 
-Code coming soon!
+Please follow our new, more comprehensive project [DEXTER-LLM-Plus](https://github.com/TRIO-PKU/DEXTER-LLM-Plus).
 
 ## Contact
 
