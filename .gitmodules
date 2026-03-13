@@ -1,0 +1,6 @@
+[submodule "src/ego_planner"]
+	path = src/ego_planner
+	url = https://github.com/TCXM/ego_planner_swarm.git
+[submodule "src/task_alloc_milp"]
+	path = src/task_alloc_milp
+	url = https://github.com/TCXM/task_alloc_milp.git
