@@ -39,7 +39,7 @@ DEXTER-LLM *(Dynamic and Explainable Coordination of Multi-Robot Systems in Unkn
 
 1. Clone the repository with `--recursive`:
     ```bash
-    git clone --recursive https://github.com/tcxm/DEXTER-LLM-dev.git
+    git clone --recursive https://github.com/tcxm/DEXTER-LLM.git
     ```
 2. Download .dae and .pcd files and save them to `src/test/files`:\
     ```bash
