@@ -1,0 +1,37 @@
+<launch>
+    <!-- Map Config -->
+    <arg name="map_name" value="Ice"/>
+
+    <!-- Robot Config -->
+    <arg name="odom_topic" value="visual_slam/odom" />
+
+    <node pkg="test" type="task_manager.py" name="task_manager" output="screen">
+        <param name="log_dir" value="$(find test)/logs/"/>
+        <param name="script_file" value="$(find test)/files/$(arg map_name)_script.txt"/>
+        <param name="map_name" value="$(arg map_name)"/>
+    </node>
+
+    <node pkg="task_gen_llm" type="task_gen_manager.py" name="task_gen_manager" output="screen">
+        <param name="log_dir" value="$(find test)/logs/"/>
+        <param name="prompt_template_path" value="$(find test)/files/$(arg map_name)_llm.json"/>
+        <param name="mode" value="preset"/>
+        <param name="preset_file_path" value="$(find test)/files/$(arg map_name)_llm_preset.json"/>
+        <remap from="/gen_tasks" to="/gen_tasks"/>
+    </node>
+
+    <node name="task_alloc_milp" pkg="task_alloc_milp" type="task_alloc_ros.py" output="screen">
+        <remap from="/task_alloc_service" to="/alloc_tasks"/>
+    </node>
+
+    <node pkg="simple_world_sim" type="world_manager.py" name="simple_world_sim" output="screen">
+        <param name="world_config_file" value="$(find test)/files/$(arg map_name)_sim.json"/>
+        <param name="odom_topic" value="$(arg odom_topic)"/>
+        <param name="model_path" value="package://simple_world_sim/models/"/>
+    </node>
+
+    <node pkg="gantt_ros" type="gantt.py" name="gantt_ros" output="screen">
+        <param name="log_dir" value="$(find test)/logs/"/>
+        <param name="plot_mode" value="publish"/>
+    </node>
+
+</launch>

@@ -1,0 +1,33 @@
+sleep 3
+resource: We have detected a {rescue_station} to save injured animal. Injured Person should be transported here.: {rescue_station}=15,21,1
+resource: We have detected a {expedition_base} to refill robots algaecide tank: {expedition_base}=16.5,21,1
+sleep 7
+task: remove {algae}: {algae}=5.4,15,2.25
+sleep 7
+task: rescue {injured_animal}: {injured_animal}=15.8,9.26,1.18
+sleep 7
+task: rescue {injured_animal}: {injured_animal}=9.25,3.04,1
+sleep 7
+task: rescue {injured_animal}: {injured_animal}=11.68,-5.21,1
+sleep 7
+task: rescue {injured_animal}: {injured_animal}=8.62,-7,1
+sleep 7
+resource: We have detected a {rescue_station} to save injured animal. Injured Person should be transported here.: {rescue_station}=9,-17,1.5
+sleep 7
+task: remove {algae}: {algae}=5.6,-12.2,1
+sleep 7
+task: remove {algae}: {algae}=-1,-14.3,1
+sleep 7
+task: remove {algae}: {algae}=-7.5,-9,1
+sleep 7
+task: remove {algae}: {algae}=-14.5,-6,1
+sleep 7
+task: remove {algae}: {algae}=-19.4,-9,1.1
+sleep 7
+task: remove {algae}: {algae}=-11.9,3.3,1.8
+sleep 7
+resource: We have detected a {snow_heap}, snow can be used by cart to remove algae: {snow_heap}=-0.12,-0.62,1.7
+sleep 10
+task: rescue {injured_animal}: {injured_animal}=-14.63,3.7,1.6
+sleep 7
+task: remove {algae}: {algae}=-14.5,19,1

@@ -1,0 +1,75 @@
+sleep 3
+resource: We have detected a {rescue_station} to save injured person. Injured Person should be transported here.: {rescue_station}=-3.5,-19,1
+resource: We have detected a {water_source} to refill robots water tank: {water_source}=-5.5,-19,1
+sleep 7
+task: extinguish {flame}: {flame}=-17,-10,1
+sleep 7
+task: rescue {injured_person}: {injured_person}=-12.6,-9.7,1
+sleep 3
+task: rescue {injured_person}: {injured_person}=1.6,7.4,1
+sleep 3
+task-p1: rescue {injured_person}: {injured_person}=1.6,5.4,1
+sleep 3
+task: rescue {injured_person}: {injured_person}=6.3,12.8,1
+sleep 3
+resource: We have detected a {rescue_station} to save injured person. Injured Person should be transported here.: {rescue_station}=-4,14,1
+sleep 3
+task: extinguish {flame}: {flame}=-12,-5.5,1
+sleep 3
+task: extinguish {flame}: {flame}=-17.1,-7.5,1
+sleep 3
+task: extinguish {flame}: {flame}=-20.9,-6.4,1
+sleep 3
+task: extinguish {flame}: {flame}=-13,12,1
+sleep 3
+task-p1: extinguish {flame}: {flame}=-20,14,1
+sleep 3
+task-p1: extinguish {flame}: {flame}=-20.9,-1,1
+sleep 3
+resource: We have detected a {sand_heap}, sand can be used by cart to extinguish fire: {sand_heap}=-26.3,0,1
+sleep 1000
+task: rescue {injured_person}: {injured_person}=10.7,-10.5,1
+sleep 7
+resource: We have detected a {water_source} to refill robots water tank: {water_source}=16,-15.1,1
+sleep 7
+task: extinguish {flame}: {flame}=7.3,-6,1
+sleep 7
+task: extinguish {flame}: {flame}=3.4,-10.2,1
+sleep 7
+task: rescue {injured_person}: {injured_person}=-10.7,2,1
+sleep 7
+task: extinguish {flame}: {flame}=-14.1,3.26,1
+sleep 7
+task: extinguish {flame}: {flame}=-8.5,2.8,1
+sleep 7
+task: extinguish {flame}: {flame}=-23,2.8,1
+sleep 7
+task: extinguish {flame}: {flame}=10.7,-4.5,1
+sleep 7
+task: rescue {injured_person}: {injured_person}=5.3,4,1
+sleep 7
+task: rescue {injured_person}: {injured_person}=1.6,7.4,1
+sleep 7
+task: extinguish {flame}: {flame}=-8.4,8.2,1
+sleep 7
+task: rescue {injured_person}: {injured_person}=1.6,5.4,1
+sleep 7
+task: extinguish {flame}: {flame}=-13.3,12.7,1
+sleep 7
+task: rescue {injured_person}: {injured_person}=6.3,12.8,1
+sleep 7
+task: extinguish {flame}: {flame}=12,-1.6,1
+sleep 7
+resource: We have detected a {fire_extinguisher} to be used to extinguish fire: {fire_extinguisher}=14.5,0.7,1
+sleep 7
+task: extinguish {flame}: {flame}=14.7,-4.6,1
+sleep 7
+task: rescue {injured_person}: {injured_person}=11.6,5,1
+sleep 7
+task: extinguish {flame}: {flame}=17,14,1
+sleep 7
+resource: We have detected a {sand_heap}, sand can be used by cart to extinguish fire: {sand_heap}=28,0.7,1
+sleep 7
+task: extinguish {flame}: {flame}=14.7,-4.6,1
+sleep 7
+task: extinguish {flame}: {flame}=20.5,13,1

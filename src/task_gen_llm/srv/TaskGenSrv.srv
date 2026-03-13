@@ -1,0 +1,4 @@
+string tg_situation_json
+---
+string tg_result_json
+bool success

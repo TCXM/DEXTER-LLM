@@ -1,0 +1,12 @@
+<launch>
+    <!-- Map Config -->
+    <arg name="map_name" value="Ice"/>
+
+    <!-- Robot Config -->
+    <arg name="odom_topic" value="visual_slam/odom" />
+
+    <node name="visualizer" pkg="test" type="map.py" output="screen" 
+    args="package://test/files/$(arg map_name).dae"/>
+    <node pkg="map_generator" name="map_pub" type="map_pub" output="screen"
+	args="$(find test)/files/$(arg map_name).pcd" />
+</launch>

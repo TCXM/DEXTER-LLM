@@ -1,0 +1,34 @@
+{
+    "objects": [
+        {
+            "name": "flame_1",
+            "location": [1, 1, 1]
+        }
+    ],
+    "agents": [
+        {
+            "id": 10,
+            "type": "fire_extinguishing_cart"
+        },
+        {
+            "id": 11,
+            "type": "fire_extinguishing_cart"
+        },
+        {
+            "id": 20,
+            "type": "transporting_cart"
+        },
+        {
+            "id": 21,
+            "type": "transporting_cart"
+        },
+        {
+            "id": 30,
+            "type": "operating_drone"
+        },
+        {
+            "id": 31,
+            "type": "operating_drone"
+        }
+    ]
+}

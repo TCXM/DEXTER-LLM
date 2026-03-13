@@ -1,0 +1,211 @@
+{
+    "extinguish {flame}": [
+        {
+            "Resources": [
+                "We have detected a {water_source} to refill robots water tank",
+                "We have detected a {sand_heap}, sand can be used by cart to extinguish fire",
+                "We have detected a {fire_extinguisher} to be used to extinguish fire"
+            ],
+            "Candidate Sub-Task Sequences": {
+                "Candidate Sub-task Sequence 1": {
+                    "Sub-Task 1": {
+                        "robot_type": "fire_extinguishing_drone",
+                        "action": "refill_water_from {water_source}",
+                        "done_by_same_robot_as": "None",
+                        "dependencies": []
+                    },
+                    "Sub-Task 2": {
+                        "robot_type": "fire_extinguishing_drone",
+                        "action": "spray_water_to {flame}",
+                        "done_by_same_robot_as": "Sub-Task 1",
+                        "dependencies": [
+                            "Sub-Task 1"
+                        ]
+                    }
+                },
+                "Candidate Sub-task Sequence 2": {
+                    "Sub-Task 1": {
+                        "robot_type": "fire_extinguishing_cart",
+                        "action": "refill_water_from {water_source}",
+                        "done_by_same_robot_as": "None",
+                        "dependencies": []
+                    },
+                    "Sub-Task 2": {
+                        "robot_type": "fire_extinguishing_cart",
+                        "action": "spray_water_to {flame}",
+                        "done_by_same_robot_as": "Sub-Task 1",
+                        "dependencies": [
+                            "Sub-Task 1"
+                        ]
+                    }
+                },
+                "Candidate Sub-task Sequence 3": {
+                    "Sub-Task 1": {
+                        "robot_type": "fire_extinguishing_cart",
+                        "action": "refill_sand_from {sand_heap}",
+                        "done_by_same_robot_as": "None",
+                        "dependencies": []
+                    },
+                    "Sub-Task 2": {
+                        "robot_type": "fire_extinguishing_cart",
+                        "action": "spray_sand_to {flame}",
+                        "done_by_same_robot_as": "Sub-Task 1",
+                        "dependencies": [
+                            "Sub-Task 1"
+                        ]
+                    }
+                },
+                "Candidate Sub-task Sequence 4": {
+                    "Sub-Task 1": {
+                        "robot_type": "operating_drone",
+                        "action": "lift_and_hold {fire_extinguisher}",
+                        "done_by_same_robot_as": "None",
+                        "dependencies": []
+                    },
+                    "Sub-Task 2": {
+                        "robot_type": "operating_drone",
+                        "action": "use_tool_to {flame}",
+                        "done_by_same_robot_as": "Sub-Task 1",
+                        "dependencies": [
+                            "Sub-Task 1"
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "Resources": [
+                "We have detected a {water_source} to refill robots water tank",
+                "We have detected a {sand_heap}, sand can be used by cart to extinguish fire"
+            ],
+            "Candidate Sub-Task Sequences": {
+                "Candidate Sub-task Sequence 1": {
+                    "Sub-Task 1": {
+                        "robot_type": "fire_extinguishing_drone",
+                        "action": "refill_water_from {water_source}",
+                        "done_by_same_robot_as": "None",
+                        "dependencies": []
+                    },
+                    "Sub-Task 2": {
+                        "robot_type": "fire_extinguishing_drone",
+                        "action": "spray_water_to {flame}",
+                        "done_by_same_robot_as": "Sub-Task 1",
+                        "dependencies": [
+                            "Sub-Task 1"
+                        ]
+                    }
+                },
+                "Candidate Sub-task Sequence 2": {
+                    "Sub-Task 1": {
+                        "robot_type": "fire_extinguishing_cart",
+                        "action": "refill_water_from {water_source}",
+                        "done_by_same_robot_as": "None",
+                        "dependencies": []
+                    },
+                    "Sub-Task 2": {
+                        "robot_type": "fire_extinguishing_cart",
+                        "action": "spray_water_to {flame}",
+                        "done_by_same_robot_as": "Sub-Task 1",
+                        "dependencies": [
+                            "Sub-Task 1"
+                        ]
+                    }
+                },
+                "Candidate Sub-task Sequence 3": {
+                    "Sub-Task 1": {
+                        "robot_type": "fire_extinguishing_cart",
+                        "action": "refill_sand_from {sand_heap}",
+                        "done_by_same_robot_as": "None",
+                        "dependencies": []
+                    },
+                    "Sub-Task 2": {
+                        "robot_type": "fire_extinguishing_cart",
+                        "action": "spray_sand_to {flame}",
+                        "done_by_same_robot_as": "Sub-Task 1",
+                        "dependencies": [
+                            "Sub-Task 1"
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "Resources": [
+                "We have detected a {water_source} to refill robots water tank"
+            ],
+            "Candidate Sub-Task Sequences": {
+                "Candidate Sub-task Sequence 1": {
+                    "Sub-Task 1": {
+                        "robot_type": "fire_extinguishing_drone",
+                        "action": "refill_water_from {water_source}",
+                        "done_by_same_robot_as": "None",
+                        "dependencies": []
+                    },
+                    "Sub-Task 2": {
+                        "robot_type": "fire_extinguishing_drone",
+                        "action": "spray_water_to {flame}",
+                        "done_by_same_robot_as": "Sub-Task 1",
+                        "dependencies": [
+                            "Sub-Task 1"
+                        ]
+                    }
+                },
+                "Candidate Sub-task Sequence 2": {
+                    "Sub-Task 1": {
+                        "robot_type": "fire_extinguishing_cart",
+                        "action": "refill_water_from {water_source}",
+                        "done_by_same_robot_as": "None",
+                        "dependencies": []
+                    },
+                    "Sub-Task 2": {
+                        "robot_type": "fire_extinguishing_cart",
+                        "action": "spray_water_to {flame}",
+                        "done_by_same_robot_as": "Sub-Task 1",
+                        "dependencies": [
+                            "Sub-Task 1"
+                        ]
+                    }
+                }
+            }
+        }
+    ],
+    "rescue {injured_person}": [
+        {
+            "Resources": [
+                "We have detected a {rescue_station} to save injured person"
+            ],
+            "Candidate Sub-Task Sequences": {
+                "Candidate Sub-task Sequence 1": {
+                    "Sub-Task 1": {
+                        "robot_type": "operating_drone",
+                        "action": "lift_and_hold {injured_person}",
+                        "done_by_same_robot_as": "None",
+                        "dependencies": []
+                    },
+                    "Sub-Task 2": {
+                        "robot_type": "transporting_cart",
+                        "action": "stop_under {injured_person}",
+                        "done_by_same_robot_as": "None",
+                        "dependencies": []
+                    },
+                    "Sub-Task 3": {
+                        "robot_type": "operating_drone",
+                        "action": "lay_down {injured_person}",
+                        "done_by_same_robot_as": "Sub-Task 1",
+                        "dependencies": [
+                            "Sub-Task 1", "Sub-Task 2"
+                        ]
+                    },
+                    "Sub-Task 4": {
+                        "robot_type": "transporting_cart",
+                        "action": "move_to {rescue_station}",
+                        "done_by_same_robot_as": "Sub-Task 2",
+                        "dependencies": [
+                            "Sub-Task 3"
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+}

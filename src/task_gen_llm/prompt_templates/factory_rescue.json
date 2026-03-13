@@ -1,0 +1,161 @@
+{
+    "Instruction": {
+        "Role": "You are an excellent expert in emergency rescue. You are the leader of a team of robots that are designed to help in emergency situations. ",
+        "Mission": "A fire broke out in a chemical plant. You have a team of robots with all kinds of skills. You should utilize the facilities and robots you have to efficiently extinguish the fire and rescue the injured person.",
+        "What to do now": "Carefully read following important information to understand the situation and fulfill the mission."
+    },
+    "Reading Guide of 'Robots Team Description'": "In this part, you will get the description of the robots in your team. Your robot team has a lot of robots. They can be divided into several types (shown below) according to their skills. For each skill, there is a short description for you to understand what that skill can do. You need to understand how and when to use there skill and their skills to complete the mission. You may consider to let them cooperate with each other. Note: (x,y,z) is a tuple with float values, representing a location.",
+    "Robots Team Description": {
+        "operating_drone": {
+            "Description": "The operator drone has flexible arm and hand.",
+            "Skills": {
+                "move_to((x,y,z))": {
+                    "Description": "Moves to a specific location.",
+                    "Example": "move_to((1,1,1))",
+                    "Constraints": ["Not holding anything"]
+                },
+                "lift_and_hold(...)": {
+                    "Description": "Lifts and holds a person or an object.",
+                    "Example": "lift_and_hold(injured_person_1)",
+                    "Constraints": ["Not holding anything"]
+                },
+                "lay_down(...)": {
+                    "Description": "Lays down the thing it is holding under itself.",
+                    "Example": "lay_down(injured_person_1)",
+                    "Constraints": ["Holding a person or an object"]
+                },
+                "throw_away(...)": {
+                    "Description": "Throws away the thing it is holding.",
+                    "Example": "throw_away(stone_1)",
+                    "Constraints": ["Holding an object"]
+                },
+                "use(...)": {
+                    "Description": "Uses a specific tool.",
+                    "Example": "use(fire_extinguisher)",
+                    "Constraints": ["Holding the tool"]
+                }
+            }
+        },
+        "transporting_cart": {
+            "Description": "The rescue cart is a cart that can be used to transport people or things. It cannot load or unload people or things by itself.",
+            "Skills": {
+                "move_to((x,y,z))": {
+                    "Description": "Moves to a specific location.",
+                    "Example": "move_to((1,1,1))",
+                    "Constraints": ["None"]
+                }
+            }
+        },
+        "fire_extinguishing_cart": {
+            "Description": "The fire-extinguishing cart is a cart that can be used to extinguish large fires.",
+            "Skills": {
+                "move_to((x,y,z))": {
+                    "Description": "Moves to a specific location.",
+                    "Example": "move_to((1,1,1))",
+                    "Constraints": ["None"]
+                },
+                "spray_water_to(fire_X)": {
+                    "Description": "Sprays water to the fire. This skill will use up the water tank. The fire will be extinguished after applying this skill.",
+                    "Example": "spray_water_to(fire_1)",
+                    "Constraints": ["Water tank is not empty"]
+                }
+            }
+        }
+    },
+    "Reading Guide of 'Facility and Resource Description'": "In this part, you will get the description of the facilities in the environment.The facilities can be used to help you complete the mission. You need to understand how to use them.",
+    "Facility and Resource Description": {
+        "medical_station": {
+            "Description": "The medical station is a place where injured people can be treated.",
+            "How to use": "There is a plant ground at location (0, 0, 0). If you can sant the injured person to this location, he will be treated automatically (Just imagine doctors will come and treat him)."
+        },
+        "water_source": {
+            "Description": "The water source is a place where you can refill the water tank",
+            "How to use": "The water source is at location (1, 1, 1). If you command a robot to move to this location, the water tank of the robot will be refilled automatically after arrival."
+        }
+    },
+    "Reading Guide of 'Output Format'": "In this part, you will get the requirment of the format of your output. You need to generate the output according to this format. Your output should be a dictionary with the following keys in JSON format. For each part, you should try your best to make it comprehensive and exellent. '...' means some text.",
+    "Output Format": {
+        "Situation Analysis": "This part should contain the comprehensive analysis of the current situation, which will help you have a clear understanding of current situation. You need to generate it according to 'Filtered Events and Feedback' you write above.",
+        "Fine Tuned Meta Policy": "This part should contain the fine tuned meta policy, which is a detailed, comprehensive and high-level guide of what should be done if some situation happened. You need to read the 'Original Meta Policy' part to understand the original meta policy. Then you need to modify it according to the current situation. If the original meta policy is empty, you need to generate a new one from scratch. If the original meta policy is good enough, you can keep it without any modification. You should write as long as you can. Note that for a specific situation, you may need to consider multiple candidate ways to handle it if possible.",
+        "Sub-Task Generation Guide": "This part should contain the sub-task generation guide. For each task, you need to generate the sub-task guide according to the current situation and find tuned Meta Policy. The sub-task guide should be detailed enough to help you generate the subsequent executable sub-task list. You need to consider the skills and corresponding constrains of the robots and the facilities in the environment when generating the sub-task guide. You also need to consider the current state of critical objects in the environment. If possible, you should consider multiple candidate ways to handle a specific task according to Meta Policy.",
+        "Tasks and Sub-Tasks": "This part should contain the tasks and sub-tasks to be executed, which is your ultimate output. You need to generate the tasks and corresponding sub-tasks according to the task generation guide and sub-task generation guide you write above. It should be detailed enough to help you complete the mission. You need to consider the skills of the robots and the facilities in the environment when generating the sub-task list. You also need to consider the current the siate of critical objects in the environment."
+    },
+    "Output Example": {
+        "Situation Analysis": "...",
+        "Fine Tuned Meta Policy": {
+            "If <some situation 1 happened>, then": "...",
+            "If <some situation 2 happened>, then": "..."
+        },
+        "Sub-Task Generation Guide": {
+            "Task 1": {
+                "Sub-Task Sequences": {
+                    "Candidate Sub-Task Sequence 1": "Send the operating_drone to lift the injured person, then ... (this is just an example)",
+                    "Candidate Sub-Task Sequence 2": "..."
+                }
+            },
+            "Task 2": {
+                "Sub-Task Sequences": {
+                    "Candidate Sub-task Sequence 1": "...",
+                    "Candidate Sub-task Sequence 2": "..."
+                }
+            }
+        },
+        "Sub-Task List": {
+            "Task 1": {
+                "Sub-Task Sequences": {
+                    "Candidate Sub-task Sequence 1": {
+                        "Sub-Task 1": {
+                            "robot_type": "one of operating_drone",
+                            "action": "lift(injured_person_1)",
+                            "location": [1, 1, 1],
+                            "dependencies": []
+                        },
+                        "Sub-Task 2": {
+                            "id": "sub_task_2",
+                            "robot_type": "one of transporting_cart",
+                            "action": "move_to((0,0,0))",
+                            "location": [0, 0, 0],
+                            "dependencies": [
+                                "Sub-Task 1"
+                            ]
+                        }
+                    },
+                    "Candidate Sub-task Sequence 2": {
+                        "Sub-Task 1": {
+                            "robot_type": "one of transporting_cart",
+                            "action": "move_to((0,0,0))",
+                            "location": [0, 0, 0],
+                            "dependencies": []
+                        }
+                    }
+                }
+            },
+            "Task 2": {
+                "Sub-Task Sequences": {
+                    "Candidate Sub-task Sequence 1": {
+                        "Sub-Task 1": {
+                            "robot_type": "one of operating_drone",
+                            "action": "lift(injured_person_1)",
+                            "location": [1, 1, 1],
+                            "dependencies": []
+                        }
+                    },
+                    "Candidate Sub-task Sequence 2": {
+                        "Sub-Task 1": {
+                            "robot_type": "one of transporting_cart",
+                            "action": "move_to((0,0,0))",
+                            "location": [0, 0, 0],
+                            "dependencies": []
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "Reading Guide of Original Meta Policy": "In this part, you will get the original meta policy. It tells how to handle differnt situations in a high-level way, like a general guide. The original meta policy is generated according to the previous situations. This means it may not fit the current situation very well. You need to read it carefully and modify it according to the current situation if needed. If original meta policy is empty, you need to generate a new one in 'Fine Tuned Meta Policy' part from scratch.",
+    "Original Meta Policy": {},
+    "Reading Guide of 'News and Feedback'": "In this part, you will get the news and feedback, which is the critical part for you to understand the current situation and generate new sub-task list.",
+    "News and Feedback": [],
+    "Reading Guide of 'Tasks'": "'Tasks' lists all the tasks we currently have. For each task, you need to generate sub-task sequences as illustrated in 'Output Format' to handle it.",
+    "Tasks": {}
+}

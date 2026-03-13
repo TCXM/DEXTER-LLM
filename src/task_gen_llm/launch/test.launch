@@ -1,0 +1,8 @@
+<launch>
+    <node pkg="task_gen_llm" type="task_gen_manager.py" name="task_gen_manager" output="screen">
+        <param name="log_dir" value="$(find task_gen_llm)/logs/"/>
+        <param name="mode" value="auto"/>
+        <param name="prompt_template_path" value="$(find task_gen_llm)/prompt_templates/factory_rescue.json"/>
+    </node>
+    <node pkg="task_gen_llm" type="test_node.py" name="test_node" output="screen"/>
+</launch>

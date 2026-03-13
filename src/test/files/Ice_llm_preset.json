@@ -1,0 +1,138 @@
+{
+    "remove {algae}": [
+        {
+            "Resources": [
+                "We have detected a {expedition_base} to refill robots algaecide tank",
+                "We have detected a {snow_heap}, snow can be used by cart to remove algae"
+            ],
+            "Candidate Sub-Task Sequences": {
+                "Candidate Sub-task Sequence 1": {
+                    "Sub-Task 1": {
+                        "robot_type": "algae_removal_drone",
+                        "action": "refill_algaecide_from {expedition_base}",
+                        "done_by_same_robot_as": "None",
+                        "dependencies": []
+                    },
+                    "Sub-Task 2": {
+                        "robot_type": "algae_removal_drone",
+                        "action": "spray_algaecide_to {algae}",
+                        "done_by_same_robot_as": "Sub-Task 1",
+                        "dependencies": [
+                            "Sub-Task 1"
+                        ]
+                    }
+                },
+                "Candidate Sub-task Sequence 2": {
+                    "Sub-Task 1": {
+                        "robot_type": "algae_removal_cart",
+                        "action": "refill_snow_from {snow_heap}",
+                        "done_by_same_robot_as": "None",
+                        "dependencies": []
+                    },
+                    "Sub-Task 2": {
+                        "robot_type": "algae_removal_cart",
+                        "action": "spray_snow_to {algae}",
+                        "done_by_same_robot_as": "Sub-Task 1",
+                        "dependencies": [
+                            "Sub-Task 1"
+                        ]
+                    }
+                },
+                "Candidate Sub-task Sequence 3": {
+                    "Sub-Task 1": {
+                        "robot_type": "algae_removal_cart",
+                        "action": "refill_algaecide_from {expedition_base}",
+                        "done_by_same_robot_as": "None",
+                        "dependencies": []
+                    },
+                    "Sub-Task 2": {
+                        "robot_type": "algae_removal_cart",
+                        "action": "spray_algaecide_to {algae}",
+                        "done_by_same_robot_as": "Sub-Task 1",
+                        "dependencies": [
+                            "Sub-Task 1"
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "Resources": [
+                "We have detected a {expedition_base} to refill robots algaecide tank"
+            ],
+            "Candidate Sub-Task Sequences": {
+                "Candidate Sub-task Sequence 1": {
+                    "Sub-Task 1": {
+                        "robot_type": "algae_removal_drone",
+                        "action": "refill_algaecide_from {expedition_base}",
+                        "done_by_same_robot_as": "None",
+                        "dependencies": []
+                    },
+                    "Sub-Task 2": {
+                        "robot_type": "algae_removal_drone",
+                        "action": "spray_algaecide_to {algae}",
+                        "done_by_same_robot_as": "Sub-Task 1",
+                        "dependencies": [
+                            "Sub-Task 1"
+                        ]
+                    }
+                },
+                "Candidate Sub-task Sequence 2": {
+                    "Sub-Task 1": {
+                        "robot_type": "algae_removal_cart",
+                        "action": "refill_algaecide_from {expedition_base}",
+                        "done_by_same_robot_as": "None",
+                        "dependencies": []
+                    },
+                    "Sub-Task 2": {
+                        "robot_type": "algae_removal_cart",
+                        "action": "spray_algaecide_to {algae}",
+                        "done_by_same_robot_as": "Sub-Task 1",
+                        "dependencies": [
+                            "Sub-Task 1"
+                        ]
+                    }
+                }
+            }
+        }
+    ],
+    "rescue {injured_animal}": [
+        {
+            "Resources": [
+                "We have detected a {rescue_station} to save injured animal"
+            ],
+            "Candidate Sub-Task Sequences": {
+                "Candidate Sub-task Sequence 1": {
+                    "Sub-Task 1": {
+                        "robot_type": "operating_drone",
+                        "action": "lift_and_hold {injured_animal}",
+                        "done_by_same_robot_as": "None",
+                        "dependencies": []
+                    },
+                    "Sub-Task 2": {
+                        "robot_type": "transporting_cart",
+                        "action": "stop_under {injured_animal}",
+                        "done_by_same_robot_as": "None",
+                        "dependencies": []
+                    },
+                    "Sub-Task 3": {
+                        "robot_type": "operating_drone",
+                        "action": "lay_down {injured_animal}",
+                        "done_by_same_robot_as": "Sub-Task 1",
+                        "dependencies": [
+                            "Sub-Task 1", "Sub-Task 2"
+                        ]
+                    },
+                    "Sub-Task 4": {
+                        "robot_type": "transporting_cart",
+                        "action": "move_to {rescue_station}",
+                        "done_by_same_robot_as": "Sub-Task 2",
+                        "dependencies": [
+                            "Sub-Task 3"
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+}

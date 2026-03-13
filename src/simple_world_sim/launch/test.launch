@@ -1,0 +1,8 @@
+<launch>
+    <!-- This launch file should be run with ego planner -->
+    <node pkg="simple_world_sim" type="world_manager.py" name="simple_world_sim" output="screen">
+        <param name="world_config_file" value="$(find simple_world_sim)/config/Factory.json"/>
+        <param name="odom_topic" value="visual_slam/odom"/>
+    </node>
+    <node pkg="simple_world_sim" type="test_node.py" name="test_node" output="screen"/>
+</launch>

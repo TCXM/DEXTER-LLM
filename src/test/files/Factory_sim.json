@@ -1,0 +1,41 @@
+{
+    "objects": [],
+    "agents": [
+        {
+            "id": "0",
+            "type": "fire_extinguishing_drone"
+        },
+        {
+            "id": "1",
+            "type": "fire_extinguishing_drone"
+        },
+        {
+            "id": "2",
+            "type": "fire_extinguishing_cart",
+            "model": "UGV.dae"
+        },
+        {
+            "id": "3",
+            "type": "fire_extinguishing_cart",
+            "model": "UGV.dae"
+        },
+        {
+            "id": "4",
+            "type": "transporting_cart",
+            "model": "UGV.dae"
+        },
+        {
+            "id": "5",
+            "type": "transporting_cart",
+            "model": "UGV.dae"
+        },
+        {
+            "id": "6",
+            "type": "operating_drone"
+        },
+        {
+            "id": "7",
+            "type": "operating_drone"
+        }
+    ]
+}

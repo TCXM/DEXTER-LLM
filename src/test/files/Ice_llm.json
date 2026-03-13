@@ -1,0 +1,116 @@
+{
+    "Instruction": {
+        "Role": "You are an excellent expert in wildlife rescue and pollution clean-up. You are the leader of a team of robots that are designed to help in these situations.",
+        "Mission": "A wild animal is trapped in a polluted area. You have a team of robots with all kinds of skills. You should utilize the facilities and robots you have to efficiently rescue the animal and clean up the pollution.",
+        "What to do now": "Carefully read the following important information to understand the situation and fulfill the mission."
+    },
+    "Reading Guide of 'Robots Team Description'": "In this part, you will get the description of the robots in your team. Your robot team has a lot of robots. They can be divided into several types (shown below) according to their skills. For each skill, there is a short description for you to understand what that skill can do. You need to understand how and when to use their skills to complete the mission. You may consider letting them cooperate with each other.",
+    "Robots Team Description": {
+        "operating_drone": {
+            "Description": "The operator drone has a flexible arm and hand.",
+            "Skills": {
+                "lift_and_hold": {
+                    "Description": "Lifts and holds an animal or an object.",
+                    "Example": "lift_and_hold {injured_animal}",
+                    "Constraints": ["Not holding anything"]
+                },
+                "lay_down": {
+                    "Description": "Lays down the thing it is holding under itself.",
+                    "Example": "lay_down {injured_animal}",
+                    "Constraints": ["Holding an animal or an object"]
+                }
+            }
+        },
+        "algae_removal_drone": {
+            "Description": "The algae_removal_drone can be used to clean up pollution. Its algaecide tank is empty in the beginning.",
+            "Skills": {
+                "refill_algaecide_tank_from": {
+                    "Description": "Refill algaecide tank from a algaecide resource.",
+                    "Example": "refill_algaecide_tank_from {algaecide_resource}",
+                    "Constraints": ["None"]
+                },
+                "spray_algaecide_to": {
+                    "Description": "Sprays algaecide to the polluted area. This skill will use up the algaecide tank.",
+                    "Example": "spray_algaecide_to {algae}",
+                    "Constraints": ["algaecide tank is full"]
+                }
+            }
+        },
+        "transporting_cart": {
+            "Description": "The transporting_cart is a cart that can be used to transport animals or things. It cannot load or unload animals or things by itself.",
+            "Skills": {
+                "move_to": {
+                    "Description": "Moves to a specific location.",
+                    "Example": "move_to {injured_animal}",
+                    "Constraints": ["None"]
+                }
+            }
+        },
+        "algaecide_cart": {
+            "Description": "The algaecide_cart is a cart that can be used to clean up pollution. Its algaecide tank is empty in the beginning.",
+            "Skills": {
+                "refill_tank_from": {
+                    "Description": "Refill tank from a facility.",
+                    "Example": "refill_tank_from {expedition_base}",
+                    "Constraints": ["None"]
+                },
+                "spray_to": {
+                    "Description": "Sprays algaecide to the polluted area. This skill will use up the algaecide tank.",
+                    "Example": "spray_to {algae}",
+                    "Constraints": ["Tank is full"]
+                }
+            }
+        }
+    },
+    "Reading Guide of 'Output Format'": "In this part, you will get the requirement of the format of your output. You need to generate the output according to this format. Your output should be a dictionary with the following keys in JSON format. For each part, you should try your best to make it comprehensive and excellent. '...' means some text.",
+    "Output Format": {
+        "Situation Analysis": "This part should contain the comprehensive analysis of the current situation, which will help you have a clear understanding of the current situation. You need to generate it according to 'Filtered Events and Feedback' you write above.",
+        "Fine Tuned Meta Policy": "This part should contain the fine-tuned meta policy, which is a detailed, comprehensive and high-level guide of what should be done if some situation happened. You need to read the 'Original Meta Policy' part to understand the original meta policy. Then you need to modify it according to the current situation. If the original meta policy is empty, you need to generate a new one from scratch. If the original meta policy is good enough, you can keep it without any modification. You should write as long as you can. Note that for a specific situation, you may need to consider multiple candidate ways to handle it if possible.",
+        "Sub-Task Generation Guide": "This part should contain the sub-task generation guide. For each task, you need to generate the sub-task guide according to the current situation and fine-tuned Meta Policy. The sub-task guide should be detailed enough to help you generate the subsequent executable sub-task list. You need to consider the skills and corresponding constraints of the robots and the facilities in the environment when generating the sub-task guide. You also need to consider the current state of critical objects in the environment. If possible, you should consider multiple candidate ways to handle a specific task according to Meta Policy.",
+        "Candidate Sub-Task Sequences": "This part should contain the tasks and sub-tasks to be executed, which is your ultimate output. You need to generate the tasks and corresponding sub-tasks according to the task generation guide and sub-task generation guide you write above. It should be detailed enough to help you complete the mission. You need to consider the skills of the robots and the facilities in the environment when generating the sub-task list. You should not consider any sub-tasks that are not closely related to finishing the task. For example, you should not consider some potential sub-tasks that are not necessary to complete the current task."
+    },
+    "Output Example": {
+        "Situation Analysis": "...",
+        "Fine Tuned Meta Policy": {
+            "If <some situation 1 happened>, then": "...",
+            "If <some situation 2 happened>, then": "..."
+        },
+        "Sub-Task Generation Guide": {
+            "Candidate Sub-Task Sequence 1": "Send the operating_drone to lift the trapped animal, then ... (this is just an example)",
+            "Candidate Sub-Task Sequence 2": "..."
+        },
+        "Candidate Sub-Task Sequences": {
+            "Candidate Sub-task Sequence 1": {
+                "Sub-Task 1": {
+                    "robot_type": "operating_drone",
+                    "action": "lift_and_hold {...}",
+                    "done_by_same_robot_as": "None",
+                    "dependencies": []
+                },
+                "Sub-Task 2": {
+                    "id": "sub_task_2",
+                    "robot_type": "transporting_cart",
+                    "action": "move_to {...}",
+                    "done_by_same_robot_as": "Sub-Task 1",
+                    "dependencies": [
+                        "Sub-Task 1"
+                    ]
+                }
+            },
+            "Candidate Sub-task Sequence 2": {
+                "Sub-Task 1": {
+                    "robot_type": "transporting_cart",
+                    "action": "move_to {...}",
+                    "done_by_same_robot_as": "None",
+                    "dependencies": []
+                }
+            }
+        }
+    },
+    "Reading Guide of Original Meta Policy": "In this part, you will get the original meta policy. It tells how to handle different situations in a high-level way, like a general guide. The original meta policy is generated according to the previous situations. This means it may not fit the current situation very well. You need to read it carefully and modify it according to the current situation if needed. If the original meta policy is empty, you need to generate a new one in 'Fine Tuned Meta Policy' part from scratch.",
+    "Original Meta Policy": {},
+    "Reading Guide of 'Resources'": "In this part, you will get the Resources, which is the critical part for you to understand the current situation and what you can use to generate the sub-task list.",
+    "Resources": [],
+    "Reading Guide of 'Task'": "'Task' is the task that you need to generate the sub-task list. You need to read the 'Resources' part to understand the current situation and generate the sub-task sequences according to the 'Output Format' part.",
+    "Task": ""
+}
